@@ -64,5 +64,8 @@ public class Main {
         for (Book book: books) {
             System.out.println(book.getAuthor().getSurname());
         }
+
+        Library library = new Library();
+        library.addBook(book1, book2);
     }
 }

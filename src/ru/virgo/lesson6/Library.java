@@ -14,9 +14,9 @@ public class Library {
 
     //добавление одной книги
 
-    public void addBook(Book newBook){
+    public void addBook(Book newBook) {
         for (int i = 0; i < books.length; i++) {
-            if (books[i] == null){
+            if (books[i] == null) {
                 newBook.setInLibrary(true);
                 books[i] = newBook;
                 break;
@@ -26,7 +26,17 @@ public class Library {
 
     //добавление нескольких книг
 
-    public void addBook(Book ...newBooks){
+    public void addBook(Book... newBooks) {/// ... - переменная, количество, аргумент
 
+    }
+
+    public Book getHome(String title) {
+        for (int i = 0; i < books.length; i++) {
+            if(books[i].getTitle().equals(true) && books[i] != null && books[i].isForHome() && books[i].isInLibrary()){
+                books[i].setInLibrary(false);
+                return books[i];
+            }
+        }
+        return null;
     }
 }
