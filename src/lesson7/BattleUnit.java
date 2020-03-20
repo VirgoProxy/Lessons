@@ -27,4 +27,22 @@ abstract public class BattleUnit extends Unit implements CanAttack{//extends - �
     public void runFromField() {
         System.out.println();
     }
+    //принимаем String, возвращаем объект
+    public static BattleUnit getBattleUnit(String type){
+        BattleUnit battleUnit = null;
+        //фабрика
+        if ("knight".equals(type)){
+            battleUnit = new Knight((int)(Math.random()*10 + 2), (int)(Math.random()*7 + 1),
+                    (int)(Math.random()*8 + 1), (int)(Math.random()*13 + 3));
+        }
+        else if ("doctor".equals(type)){
+            battleUnit = new Doctor((int)(Math.random()*10 + 2), (int)(Math.random()*7 + 1),
+                    (int)(Math.random()*8 + 1), (int)(Math.random()*13 + 3));
+        }
+        else if ("infantry".equals(type)){
+            battleUnit = new Infantry((int)(Math.random()*10 + 2), (int)(Math.random()*7 + 1),
+                    (int)(Math.random()*8 + 1), (int)(Math.random()*13 + 3));
+        }
+        return battleUnit;
+    }
 }
